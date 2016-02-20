@@ -11,12 +11,13 @@ import Foundation
 class Entry {
     
     var label:String = ""
-    var time:NSDate = NSDate()
-    var length:NSTimeInterval
-    var deadline:NSDate = NSDate()
+    var time:NSTimeInterval = 0
+    var length:NSTimeInterval = 0
+    var deadline:NSTimeInterval = 0
     var type:Type = .other
     var priority:Int =  5
     var location:String = ""
+    var doable:Bool = true
     
     enum Type{
         case course
@@ -28,9 +29,9 @@ class Entry {
     
     init(label:String, time:NSDate, deadline:NSDate, length: NSTimeInterval, type:Type,priority:Int, location:String ){
         self.label = label
-        self.time = time
+        self.time = time.timeIntervalSince1970
         self.length = length
-        self.deadline = deadline
+        self.deadline = deadline.timeIntervalSince1970
         self.type = type
         self.priority = priority
         self.location = location
