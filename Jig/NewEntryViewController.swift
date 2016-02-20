@@ -9,11 +9,21 @@
 
 import UIKit
 
-class NewEntryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NewEntryViewController: UIViewController, UITextFieldDelegate{
     
-    @IBOutlet weak var entryTable: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var field1: UITextField!
+    @IBOutlet weak var field2: UITextField!
+    @IBOutlet weak var field3: UITextField!
+    @IBOutlet weak var field4: UITextField!
+    @IBOutlet weak var field5: UITextField!
+
     @IBAction func add(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {})
+        self.dismissViewControllerAnimated(true, completion: {
+        //allEntries.append(Entry(label: self.field1.text!, time: NSDate(), deadline: NSDate(timeInterval: NSTimeInterval(30*60), sinceDate: NSDate()), length: Double(self.field2.text!)!, type: .homework, priority: 1, location: self.field3.text!))
+            print(self.field1.text)
+        })
     }
     
     @IBAction func cancel(sender: AnyObject) {
@@ -22,23 +32,27 @@ class NewEntryViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        entryTable.delegate = self
-        entryTable.dataSource = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 24
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if ((textField == field5) || (textField == field4) || (textField == field3)){
+        scrollView.setContentOffset(CGPoint(x: 0,y: 250), animated: true)
+        }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("EntryCell")! as UITableViewCell
-        let timeLabel = cell.viewWithTag(7) as! UILabel
-        timeLabel.text = String(indexPath.row+3)
-        return cell
+    func textFieldDidEndEditing(textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // cell selected code here
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

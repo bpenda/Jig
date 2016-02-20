@@ -8,11 +8,12 @@
 
 import UIKit
 
+var allEntries = [Entry]()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var allEntries = [Entry]()
     var entriesByWeek = [[Entry]]()
     var currentDate:NSDate = NSDate()
     var startTime = 8.0
@@ -50,9 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func planWeek(week:Int){
-        var i = 0;
-        var d = 1;
-        var baseTime = firstDateOfWeekWithDate(currentDate) + Double(7*24*3600 * week)
+        var i = 0, d = 1
+        let baseTime = firstDateOfWeekWithDate(currentDate) + Double(7*24*3600 * week)
         if(entriesByWeek.count == 0){
             d = getDayOfWeek(currentDate)
         }
@@ -61,14 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         for ; d <= 7; d++ {
             for ; i < allEntries.count; i++ {
-                let deadline = allEntries[i].deadline
                 let length = allEntries[i].length
                 if(entriesByWeek[week].count == 0){
                     let newTime = computeTimeOffset(baseTime, day: d, start: startTime)
                     entriesByWeek[week].append(allEntries[i])
                     entriesByWeek[week][0].time = newTime
-                }
-                else{
+                }else{
                     //iterate through every entry for day d and insert where possible
                     for var e = 0; e < entriesByWeek[week].count; e++ {
                         let existingEntry = entriesByWeek[week][e]
@@ -80,19 +78,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 entriesByWeek[week].insert(allEntries[i], atIndex: 0)
                                 let newEntry = entriesByWeek[week][0]
                                 newEntry.time = existingEntry.time - length
-                                
-                                
-                            }
-                            else{
+                            }else{
                                 let above = entriesByWeek[week][e]
                                 let endOfAbove = above.time + above.length
                                 let beginningOfBelow = computeTimeOffset(baseTime, day: d, start: startTime) + workTime
                                 if(beginningOfBelow - endOfAbove > length){
                                     entriesByWeek[week].insert(allEntries[i],atIndex: 1)
                                     entriesByWeek[week][1].time = endOfAbove
-                                    
                                 }
-
                             }
                             break
                         }
@@ -106,7 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             }
                             break
                         }
-                        
                         let above = entriesByWeek[week][e]
                         let below = entriesByWeek[week][e + 1]
                         let endOfAbove = above.time + above.length
