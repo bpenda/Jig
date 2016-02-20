@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113001401C7855BB00A1286F /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130013F1C7855BB00A1286F /* NewEntryViewController.swift */; };
+		113001431C7857B800A1286F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113001421C7857B800A1286F /* ProfileViewController.swift */; };
+		113001451C7864C500A1286F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113001441C7864C500A1286F /* MainViewController.swift */; };
 		A9862E1D1C7821AE007C2504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9862E1C1C7821AE007C2504 /* AppDelegate.swift */; };
-		A9862E1F1C7821AE007C2504 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9862E1E1C7821AE007C2504 /* ViewController.swift */; };
 		A9862E221C7821AE007C2504 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9862E201C7821AE007C2504 /* Main.storyboard */; };
 		A9862E241C7821AE007C2504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9862E231C7821AE007C2504 /* Assets.xcassets */; };
 		A9862E271C7821AE007C2504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9862E251C7821AE007C2504 /* LaunchScreen.storyboard */; };
 		A9862E321C7821AE007C2504 /* JigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9862E311C7821AE007C2504 /* JigTests.swift */; };
 		A9862E3D1C7821AE007C2504 /* JigUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9862E3C1C7821AE007C2504 /* JigUITests.swift */; };
+		A9862E511C78B100007C2504 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9862E501C78B100007C2504 /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1130013F1C7855BB00A1286F /* NewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
+		113001421C7857B800A1286F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		113001441C7864C500A1286F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A9862E191C7821AE007C2504 /* Jig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9862E1C1C7821AE007C2504 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A9862E1E1C7821AE007C2504 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A9862E211C7821AE007C2504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9862E231C7821AE007C2504 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9862E261C7821AE007C2504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		A9862E381C7821AE007C2504 /* JigUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JigUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9862E3C1C7821AE007C2504 /* JigUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JigUITests.swift; sourceTree = "<group>"; };
 		A9862E3E1C7821AE007C2504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9862E501C78B100007C2504 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,11 @@
 		A9862E1B1C7821AE007C2504 /* Jig */ = {
 			isa = PBXGroup;
 			children = (
+				A9862E501C78B100007C2504 /* Entry.swift */,
 				A9862E1C1C7821AE007C2504 /* AppDelegate.swift */,
-				A9862E1E1C7821AE007C2504 /* ViewController.swift */,
+				1130013F1C7855BB00A1286F /* NewEntryViewController.swift */,
+				113001421C7857B800A1286F /* ProfileViewController.swift */,
+				113001441C7864C500A1286F /* MainViewController.swift */,
 				A9862E201C7821AE007C2504 /* Main.storyboard */,
 				A9862E231C7821AE007C2504 /* Assets.xcassets */,
 				A9862E251C7821AE007C2504 /* LaunchScreen.storyboard */,
@@ -193,7 +202,7 @@
 				TargetAttributes = {
 					A9862E181C7821AD007C2504 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6T66YGC736;
+						DevelopmentTeam = D6UAGPZQYN;
 					};
 					A9862E2C1C7821AE007C2504 = {
 						CreatedOnToolsVersion = 7.3;
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9862E1F1C7821AE007C2504 /* ViewController.swift in Sources */,
+				A9862E511C78B100007C2504 /* Entry.swift in Sources */,
+				113001401C7855BB00A1286F /* NewEntryViewController.swift in Sources */,
+				113001431C7857B800A1286F /* ProfileViewController.swift in Sources */,
 				A9862E1D1C7821AE007C2504 /* AppDelegate.swift in Sources */,
+				113001451C7864C500A1286F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,10 +412,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Jig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vbhi.Jig;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -411,10 +427,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Jig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vbhi.Jig;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -483,6 +503,7 @@
 				A9862E431C7821AE007C2504 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9862E441C7821AE007C2504 /* Build configuration list for PBXNativeTarget "JigTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +512,7 @@
 				A9862E461C7821AE007C2504 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9862E471C7821AE007C2504 /* Build configuration list for PBXNativeTarget "JigUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +521,7 @@
 				A9862E491C7821AE007C2504 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
