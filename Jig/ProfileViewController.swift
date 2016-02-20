@@ -11,6 +11,8 @@ import UIKit
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var profileTable: UITableView!
+    @IBOutlet var todayBut: UIBarButtonItem!
+    
     
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -20,6 +22,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         profileTable.delegate = self
         profileTable.dataSource = self
+        performSegueWithIdentifier("today", sender: nil)
+
     }
     
     
