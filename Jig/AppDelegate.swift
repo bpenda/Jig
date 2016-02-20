@@ -12,11 +12,48 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var allEntries = [Entry]()
+    var entriesByWeek = [[Entry]]()
+    var currentDate:NSDate = NSDate();
+    var workTime = NSTimeInterval(12*60*60)
+    var crunchTime = NSTimeInterval(4*60*60)
 
+    
 
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        currentDate = NSDate()
         return true
+    }
+    
+    func sortByDeadline(inout entries:[Entry]){
+        entries.sortInPlace { $0.deadline.compare($1.deadline) == .OrderedAscending }
+    }
+    
+    func planWeek(){
+        var i = 0;
+        var w = 1;
+        if(entriesByWeek.count == 0){
+            w = getDayOfWeek(currentDate)
+        }
+        for ; w <= 7; w++ {
+            var budget:NSTimeInterval = NSTimeInterval(0)
+            for ; i < allEntries.count; i++ {
+                
+            }
+        }
+    }
+    
+    func determineConflicts(inout entries:[Entry]){
+        
+    }
+    
+    func getDayOfWeek(date:NSDate) -> Int {
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let myComponents = myCalendar.components(.Weekday, fromDate: date)
+        let weekDay = myComponents.weekday
+        return weekDay
     }
 
     func applicationWillResignActive(application: UIApplication) {
